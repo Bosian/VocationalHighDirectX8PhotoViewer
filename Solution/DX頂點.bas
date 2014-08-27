@@ -1,5 +1,7 @@
 Attribute VB_Name = "Module22"
 Public Vertex() As TLVERTEX '³»ÂI
+Public D3DX As D3DX8
+Public data222 As Byte
 
 Type TLVERTEX
     X As Single
