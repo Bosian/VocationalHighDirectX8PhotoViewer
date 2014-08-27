@@ -1,28 +1,34 @@
 VERSION 5.00
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form Form21 
    Appearance      =   0  '平面
    BackColor       =   &H80000005&
-   BorderStyle     =   1  '單線固定
    Caption         =   "DirectX"
-   ClientHeight    =   6330
-   ClientLeft      =   150
-   ClientTop       =   540
-   ClientWidth     =   8085
+   ClientHeight    =   7395
+   ClientLeft      =   225
+   ClientTop       =   615
+   ClientWidth     =   13740
    Icon            =   "Form21.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
-   MaxButton       =   0   'False
-   ScaleHeight     =   6330
-   ScaleWidth      =   8085
+   ScaleHeight     =   7395
+   ScaleWidth      =   13740
    StartUpPosition =   2  '螢幕中央
    WindowState     =   2  '最大化
+   Begin MSComDlg.CommonDialog openfileDialog 
+      Left            =   960
+      Top             =   6000
+      _ExtentX        =   847
+      _ExtentY        =   847
+      _Version        =   393216
+   End
    Begin VB.Frame Frame1 
       BorderStyle     =   0  '沒有框線
       Caption         =   " "
       Height          =   3015
       Index           =   1
       Left            =   3720
-      TabIndex        =   4
+      TabIndex        =   0
       Top             =   120
       Visible         =   0   'False
       Width           =   2295
@@ -31,7 +37,7 @@ Begin VB.Form Form21
          Height          =   255
          Index           =   1
          Left            =   240
-         TabIndex        =   10
+         TabIndex        =   6
          Top             =   840
          Value           =   -1  'True
          Width           =   1095
@@ -41,7 +47,7 @@ Begin VB.Form Form21
          Height          =   255
          Index           =   2
          Left            =   240
-         TabIndex        =   9
+         TabIndex        =   5
          Top             =   1200
          Width           =   1335
       End
@@ -50,7 +56,7 @@ Begin VB.Form Form21
          Height          =   255
          Index           =   3
          Left            =   240
-         TabIndex        =   8
+         TabIndex        =   4
          Top             =   1560
          Width           =   1335
       End
@@ -59,7 +65,7 @@ Begin VB.Form Form21
          Height          =   255
          Index           =   4
          Left            =   240
-         TabIndex        =   7
+         TabIndex        =   3
          Top             =   1920
          Width           =   1335
       End
@@ -68,7 +74,7 @@ Begin VB.Form Form21
          Height          =   255
          Index           =   5
          Left            =   240
-         TabIndex        =   6
+         TabIndex        =   2
          Top             =   2280
          Width           =   1335
       End
@@ -77,7 +83,7 @@ Begin VB.Form Form21
          Height          =   255
          Index           =   6
          Left            =   240
-         TabIndex        =   5
+         TabIndex        =   1
          Top             =   2640
          Width           =   1575
       End
@@ -86,7 +92,7 @@ Begin VB.Form Form21
          Height          =   255
          Index           =   0
          Left            =   240
-         TabIndex        =   11
+         TabIndex        =   7
          Top             =   480
          Width           =   1095
       End
@@ -139,7 +145,7 @@ Begin VB.Form Form21
          Height          =   195
          Index           =   1
          Left            =   480
-         TabIndex        =   12
+         TabIndex        =   8
          Top             =   75
          Width           =   1365
       End
@@ -161,124 +167,11 @@ Begin VB.Form Form21
          Width           =   2325
       End
    End
-   Begin VB.FileListBox File1 
-      Appearance      =   0  '平面
-      Height          =   1290
-      Left            =   6120
-      TabIndex        =   3
-      Top             =   240
-      Visible         =   0   'False
-      Width           =   1455
-   End
-   Begin VB.Frame Frame1 
-      Height          =   4455
-      Index           =   0
-      Left            =   240
-      TabIndex        =   0
-      Top             =   120
-      Visible         =   0   'False
-      Width           =   3255
-      Begin VB.CommandButton Command1 
-         Caption         =   "確定"
-         Default         =   -1  'True
-         Height          =   375
-         Left            =   2040
-         TabIndex        =   14
-         Top             =   3960
-         Width           =   1095
-      End
-      Begin VB.DirListBox Dir1 
-         Appearance      =   0  '平面
-         Height          =   3030
-         Left            =   120
-         TabIndex        =   2
-         Top             =   840
-         Width           =   3015
-      End
-      Begin VB.DriveListBox Drive1 
-         Appearance      =   0  '平面
-         Height          =   300
-         Left            =   120
-         TabIndex        =   1
-         Top             =   400
-         Width           =   3015
-      End
-      Begin VB.Image Image1 
-         Height          =   285
-         Index           =   0
-         Left            =   2970
-         Picture         =   "Form21.frx":1054E
-         Top             =   0
-         Width           =   285
-      End
-      Begin VB.Line Line6 
-         BorderColor     =   &H00FF0000&
-         BorderWidth     =   3
-         X1              =   0
-         X2              =   3240
-         Y1              =   4440
-         Y2              =   4440
-      End
-      Begin VB.Line Line5 
-         BorderColor     =   &H00FF0000&
-         BorderWidth     =   3
-         X1              =   3240
-         X2              =   3240
-         Y1              =   240
-         Y2              =   4440
-      End
-      Begin VB.Line Line4 
-         BorderColor     =   &H00FF0000&
-         BorderWidth     =   3
-         X1              =   0
-         X2              =   0
-         Y1              =   120
-         Y2              =   4440
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         BackStyle       =   0  '透明
-         Caption         =   "選擇圖片資料夾"
-         BeginProperty Font 
-            Name            =   "新細明體"
-            Size            =   9.75
-            Charset         =   136
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00FFFFFF&
-         Height          =   195
-         Index           =   0
-         Left            =   480
-         TabIndex        =   13
-         Top             =   75
-         Width           =   1365
-      End
-      Begin VB.Image Image5 
-         Height          =   255
-         Left            =   120
-         Picture         =   "Form21.frx":10A04
-         Stretch         =   -1  'True
-         Top             =   30
-         Width           =   255
-      End
-      Begin VB.Image Image2 
-         Height          =   315
-         Index           =   0
-         Left            =   0
-         Picture         =   "Form21.frx":10EC2
-         Stretch         =   -1  'True
-         Top             =   0
-         Width           =   3285
-      End
-   End
    Begin VB.Image Image3 
       Height          =   285
       Index           =   1
       Left            =   480
-      Picture         =   "Form21.frx":11EDC
+      Picture         =   "Form21.frx":1054E
       Top             =   6000
       Visible         =   0   'False
       Width           =   285
@@ -287,7 +180,7 @@ Begin VB.Form Form21
       Height          =   285
       Index           =   0
       Left            =   120
-      Picture         =   "Form21.frx":12383
+      Picture         =   "Form21.frx":109F5
       Top             =   6000
       Visible         =   0   'False
       Width           =   285
@@ -333,6 +226,7 @@ Dim Sine(360) As Single
 Dim Xdis() As Single, Ydis() As Single
 Dim O_Xdis() As Single, O_Ydis() As Single
 Dim D_Xdis() As Single, D_Ydis() As Single
+Dim fileArray() As String '圖片路徑含名稱陣列
 Dim ma As Integer '圖片數量
 Dim S(11) As Integer '0)g圖片移動精細度 1)每排圖數 2)圖片迴圈起始 3)圖片迴圈終點 4)上下頁 5)頁數累加 6)程式即將結束 7)滑鼠沒按到任何的圖 8)亂數背景 9)顯示DX文字 10)選擇圖片資料夾 11)開頭動畫
 Dim Pic_W As Single '圖寬
@@ -380,20 +274,34 @@ Call DXFont 'DX文字
 End Sub
 Private Sub Form_Activate()
 Do
-    Call START(Dir1.Path) '初始化
+    Call START(openfileDialog.fileName) '初始化
     Call BackPicture(Pic_Back) '背景
-    Call Dx_Texture 'DX材質
+    Call Dx_Texture   'DX材質
     Call Core '核心
     If S(10) = 1 Then Me.Caption = Form_Name: Call Ma_Clear
     If S(6) = 1 Then S(6) = 2: Unload Me '結束程式(ESC)
 Loop Until S(6) <> 0
 Call Ma_Clear '清除數值資料
 End Sub
-Private Sub START(a As String) '初始化 a)預設為畢業光碟程式路徑
-Dim f As Byte, j As Byte
+Private Sub START(fileName As String) '初始化 a)預設為畢業光碟程式路徑
+Dim f As Byte, j As Byte, strArr() As String
+Dim length As Long
 
-File1.Path = a '圖片路徑
-ma = File1.ListCount - 1
+strArr = Split(fileName, vbNullChar)
+length = UBound(strArr)
+
+If length > 0 Then
+    ma = length - 1
+    ReDim fileArray(ma) As String
+    
+    For f = 1 To length
+        fileArray(f - 1) = strArr(f)
+    Next
+Else
+    ma = length
+    fileArray = strArr
+End If
+
 If ma = -1 Then ma = 0
 
 ReDim Texture(ma + PR) As Direct3DTexture8
@@ -417,10 +325,12 @@ End Sub
 Private Sub Dx_Texture() '載入材質
 Dim a(1) As Single, b(1) As Single, f As Integer, j As Integer, i As Byte, t As Long
 
+If UBound(fileArray) = -1 Then Exit Sub
+
 t = GetTickCount '計時開始
 Call Central(a(0), a(1), b(0), b(1)) '發牌起始計算
 For f = S(2) To S(3)
-    Set Texture(f) = LoadTexture(f, Pic_W, Pic_H) '讀取圖片
+    Set Texture(f) = LoadTexture(fileArray(f), Pic_W, Pic_H) '讀取圖片
     Me.Caption = Form_Name & "　" & f + 1 & " / " & S(3) + 1 & "　圖片載入中　" & XP_Active(f \ 3 Mod 5) & "　共" & ma + 1 & "張　" & "耗時" & (GetTickCount - t) \ 1000 & "秒"
     
     Vertex(0, f) = Ver(a(0), b(0), 0, 0) '起始位置
@@ -526,17 +436,17 @@ Select Case Button
                 Debug.Print .A_Turn
                 If .Large Then
                     If PiX = -1 Then '如果是原生解析度或是同學一句話則
-                        Set Texture(P_Move(3)) = LoadTexture(P_Move(3))
+                        Set Texture(P_Move(3)) = LoadTexture(fileArray(P_Move(3)))
                         w = File_ele.Width
                         h = File_ele.Height
                     Else
-                        Set Texture(P_Move(3)) = LoadTexture(P_Move(3), PiX, PiY)
+                        Set Texture(P_Move(3)) = LoadTexture(fileArray(P_Move(3)), PiX, PiY)
                         w = IIf(File_ele.Width < File_ele.Height, PiY, PiX) '直式橫式判斷
                         h = IIf(File_ele.Width < File_ele.Height, PiX, PiY)
                     End If
                 Else
                     '.OpenTurn = 1 '開啟旋轉
-                    Set Texture(P_Move(3)) = LoadTexture(P_Move(3), Pic_W, Pic_H)
+                    Set Texture(P_Move(3)) = LoadTexture(fileArray(P_Move(3)), Pic_W, Pic_H)
                     w = Pic_W '寬
                     h = Pic_H '高
                 End If
@@ -573,7 +483,12 @@ If S(7) = 1 Then Exit Sub
 
 If Button = 1 Then
     P_Move(0) = 0 '放開左鍵
-    If P_Size(P_Move(3)).Dis_Large = 0 Then Call Form_MouseDown(3, 1, X, Y) '如果使用者目的是要縮放則縮放
+    If P_Size(P_Move(3)).Dis_Large = 0 Then
+        ' 防止一開始按開啟檔案時變成無檔案放大
+        If UBound(fileArray) >= 0 Then
+            Call Form_MouseDown(3, 1, X, Y) '如果使用者目的是要縮放則縮放
+        End If
+    End If
     P_Size(P_Move(3)).Dis_Large = 0 '清除紀錄
 End If
 End Sub
@@ -673,14 +588,15 @@ Unload Me
 End Sub
 Private Sub Load_START() '只讀一次
 Dim f As Byte, j As Byte
-'Dir1.Path = Pic_Drive
-Pic_Drives_Click (0)
+
+'支援多檔開啟
+openfileDialog.flags = cdlOFNAllowMultiselect + cdlOFNExplorer
 
 '亂數背景
 Randomize
 S(8) = Int(Rnd * 3) + 1
 S(8) = 63 + S(8) * 2 '=65 67 69
-Pic_Back = "BackPicture\" & S(8) & ".jpg"
+Pic_Back = App.Path & "\BackPicture\" & S(8) & ".jpg"
 
 '■□□□□
 '□■□□□
@@ -695,11 +611,10 @@ For f = 0 To 4
 Next
 Form_Name = Me.Caption
 End Sub
-Function LoadTexture(ByVal FileName, Optional w As Single = D3DX_DEFAULT, Optional h As Single = D3DX_DEFAULT, Optional color As Long = 0) As Direct3DTexture8
+Function LoadTexture(ByVal fileName, Optional w As Single = D3DX_DEFAULT, Optional h As Single = D3DX_DEFAULT, Optional color As Long = 0) As Direct3DTexture8
 On Error Resume Next
 
-If Val(FileName) <> 0 Or FileName = 0 Then FileName = File1.Path & "\" & File1.List(FileName) '如果是照片則進入
-Set LoadTexture = D3DX.CreateTextureFromFileEx(D3ddevice, FileName, w, h, D3DX_DEFAULT, 0, D3DFMT_UNKNOWN, D3DPOOL_MANAGED, D3DX_FILTER_LINEAR, D3DX_FILTER_LINEAR, color, File_ele, ByVal 0)
+Set LoadTexture = D3DX.CreateTextureFromFileEx(D3ddevice, fileName, w, h, D3DX_DEFAULT, 0, D3DFMT_UNKNOWN, D3DPOOL_MANAGED, D3DX_FILTER_LINEAR, D3DX_FILTER_LINEAR, color, File_ele, ByVal 0)
 End Function
 Private Sub Auto_Dis(f, w As Single, h As Single) '距離自動化
 Dim a As Single, b As Single
@@ -745,7 +660,7 @@ ReDim Texture(ma + PR), P_Size(ma), AF(ma)
 S(8) = (S(8) - 65) / 2 '0 2 4 => 0 1 2
 S(8) = (S(8) + 1) Mod 3 '換下一張背景
 S(8) = S(8) * 2 + 65
-Call BackPicture("BackPicture\" & S(8) & ".jpg") '載入背景
+Call BackPicture(App.Path & "\BackPicture\" & S(8) & ".jpg") '載入背景
 
 Call Glide(0, 1) '淡入
 S(9) = 0
@@ -766,10 +681,10 @@ Do
     Call Render(S(3))
 Loop While IIf(b = -1, i > 1, i < 254)
 End Sub
-Private Sub BackPicture(FileName As String) '背景
+Private Sub BackPicture(fileName As String) '背景
 Dim j As Byte
 
-Set Texture(ma + 1) = LoadTexture(FileName)
+Set Texture(ma + 1) = LoadTexture(fileName)
 Vertex(0, ma + 1) = Ver(0, 0, 0, 0)
 Vertex(1, ma + 1) = Ver((D3dParam.BackBufferWidth), 0, 1, 0)
 Vertex(2, ma + 1) = Ver(0, (D3dParam.BackBufferHeight), 0, 1)
@@ -818,7 +733,7 @@ Select Case KeyCode
     Case 13
         If Shift = 4 Then
             Call Dx_START(False, Me)
-            Call START(Dir1.Path) '初始化
+            Call START(openfileDialog.fileName) '初始化
             Call BackPicture(Pic_Back) '背景
             Call Dx_Texture 'DX材質
         End If
@@ -852,7 +767,13 @@ End Sub
 Private Sub Pic_Drives_Click(Index As Integer) '檔案功能表
 Select Case Index
     Case 0 '選擇圖片資料夾
-        Frame1(0).Visible = True
+        openfileDialog.CancelError = True
+        openfileDialog.MaxFileSize = 10240
+        
+        On Error GoTo Err
+        openfileDialog.fileName = ""
+        openfileDialog.ShowOpen
+        S(10) = 1 ' 重新選擇圖片
     Case 1 '放大解析度
         Frame1(1).Visible = True
     Case 2 '上一頁
@@ -862,14 +783,8 @@ Select Case Index
     Case 4 '說明
         Call Form_KeyDown(72, 0)
 End Select
-End Sub
-Private Sub Drive1_Change()
-On Error GoTo Err:
-Dir1.Path = Drive1.Drive
-Exit Sub
 
 Err:
-    MsgBox "沒有磁片!", 48, "警告!"
 End Sub
 Private Sub Image1_MouseDown(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
 Image1(Index).Picture = Image3(1).Picture
@@ -879,10 +794,6 @@ Frame1(Index).Visible = False
 End Sub
 Private Sub Image1_MouseUp(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
 Image1(Index).Picture = Image3(0).Picture
-End Sub
-Private Sub Command1_Click() '確定
-Call Image1_Click(0) '按X
-S(10) = 1
 End Sub
 Private Sub Option1_Click(Index As Integer)
 Dim a() As String
@@ -894,7 +805,7 @@ End Sub
 Private Sub Ma_Clear() '清除數值資料
 Dim t As Byte '背景數值暫存
 t = S(8)
-Erase Texture(), Vertex(), P_Size(), AF(), P_Move(), Xdis(), Ydis(), O_Xdis(), O_Ydis(), D_Xdis(), D_Ydis(), S() '清除資料(換圖片目錄)
+Erase Texture(), Vertex(), P_Size(), AF(), P_Move(), Xdis(), Ydis(), O_Xdis(), O_Ydis(), D_Xdis(), D_Ydis(), S(), fileArray '清除資料(換圖片目錄)
 S(8) = t
 End Sub
 Private Sub Form_Unload(Cancel As Integer) '表單移除
