@@ -1,7 +1,6 @@
 Attribute VB_Name = "Module22"
 Public Vertex() As TLVERTEX '頂點
 Public D3DX As D3DX8
-Public data222 As Byte
 
 Type TLVERTEX
     X As Single
@@ -32,6 +31,6 @@ Function Ver(X As Single, Y As Single, tu As Single, tv As Single) As TLVERTEX
     Ver.uv.Y = tv
 End Function
 
-
+'參考資料 KYO VBDX http://kyovbdx.myweb.hinet.net/
 
 
